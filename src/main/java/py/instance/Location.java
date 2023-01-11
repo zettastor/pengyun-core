@@ -28,7 +28,7 @@ import org.apache.commons.lang3.Validate;
 import py.common.FrequentlyUsedStrings;
 
 public class Location implements Serializable {
-  private static final long serialVersionUID = 0l;
+  private static final long serialVersionUID = 0L;
   private static final String REGION_FIELD_NAME = "r";
   private static final String DC_FIELD_NAME = "d";
   private static final String RACK_FIELD_NAME = "c";

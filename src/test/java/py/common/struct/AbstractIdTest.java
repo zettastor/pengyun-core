@@ -46,10 +46,10 @@ public class AbstractIdTest extends TestBase {
   public void basicTest() throws Exception {
     String aid = "12345";
     MyId myId = new MyId(aid, true);
-    Assert.assertEquals(12345l, myId.getId());
+    Assert.assertEquals(12345L, myId.getId());
 
     String aid1 = prefix + "12345";
-    String aid2= prefix + "[12345";
+    String aid2 = prefix + "[12345";
     String aid3 = prefix + "12345]";
     try {
       myId = new MyId(aid1, false);
@@ -61,7 +61,7 @@ public class AbstractIdTest extends TestBase {
 
     String aid4 = prefix + "[12345]";
     MyId myId4 = new MyId(aid4, false);
-    Assert.assertEquals(12345l, myId4.getId());
+    Assert.assertEquals(12345L, myId4.getId());
   }
 }
 

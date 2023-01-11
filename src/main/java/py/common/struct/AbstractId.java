@@ -46,7 +46,7 @@ public abstract class AbstractId implements Comparable<AbstractId> {
     String prefix = printablePrefix();
     if (!rawFormat) {
       if (string.charAt(prefix.length()) != '[' || !string.endsWith("]") || !string.startsWith(
-          prefix)){
+          prefix)) {
         throw new InvalidFormatException("Id's format must be prefix[id]. string : " + string);
       }
     }
