@@ -1,17 +1,24 @@
 /*
- * Copyright (c) 2022-2022. PengYunNetWork
+ * Copyright (c) 2011 Evolveum
  *
- * This program is free software: you can use, redistribute, and/or modify it
- * under the terms of the GNU Affero General Public License, version 3 or later ("AGPL"),
- * as published by the Free Software Foundation.
+ * The contents of this file are subject to the terms
+ * of the Common Development and Distribution License
+ * (the License). You may not use this file except in
+ * compliance with the License.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * You can obtain a copy of the License at
+ * http://www.opensource.org/licenses/cddl1 or
+ * CDDLv1.0.txt file in the source code distribution.
+ * See the License for the specific language governing
+ * permission and limitations under the License.
  *
- *  You should have received a copy of the GNU Affero General Public License along with
- *  this program. If not, see <http://www.gnu.org/licenses/>.
+ * If applicable, add the following below the CDDL Header,
+ * with the fields enclosed by brackets [] replaced by
+ * your own identifying information:
+ *
+ * Portions Copyrighted 2011 [name of copyright owner]
+ * Portions Copyrighted 2010 Forgerock
  */
-
 package py.common.struct;
 
 public class Pair<A, B> extends Object {

@@ -1,17 +1,30 @@
 /*
- * Copyright (c) 2022-2022. PengYunNetWork
- *
- * This program is free software: you can use, redistribute, and/or modify it
- * under the terms of the GNU Affero General Public License, version 3 or later ("AGPL"),
- * as published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- *  You should have received a copy of the GNU Affero General Public License along with
- *  this program. If not, see <http://www.gnu.org/licenses/>.
- */
+    Copyright 2009 ThoughtWorks, Inc. All rights reserved.
 
+    Redistribution and use in source and binary forms, with or without modification, are
+    permitted provided that the following conditions are met:
+
+       1. Redistributions of source code must retain the above copyright notice, this list of
+          conditions and the following disclaimer.
+
+       2. Redistributions in binary form must reproduce the above copyright notice, this list
+          of conditions and the following disclaimer in the documentation and/or other materials
+          provided with the distribution.
+
+    THIS SOFTWARE IS PROVIDED BY THOUGHTWORKS, INC. ``AS IS'' AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+    FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THOUGHTWORKS, INC. OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+    ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    The views and conclusions contained in the software and documentation are those of the
+    authors and should not be interpreted as representing official policies, either expressed
+    or implied, of ThoughtWorks, Inc.
+*/
 package py.system.monitor;
 
 import java.io.BufferedReader;
@@ -21,42 +34,43 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 class UnixPasswdParser {
-  public HashMap parse(BufferedReader reader) {
-    if (reader == null) {
-      System.err.println("Error parsing password file: reader is null");
-      return new HashMap();
-    }
 
-    HashMap users = new HashMap();
-    try {
-      String line;
-      while ((line = reader.readLine()) != null) {
-        String[] fields = line.split(":");
-        if (fields.length >= 2) {
-          users.put(fields[2], fields[0]);
+    public HashMap parse(BufferedReader reader) {
+        if (reader == null) {
+            System.err.println("Error parsing password file: reader is null");
+            return new HashMap();
         }
-      }
-      return users;
-    } catch (IOException e) {
-      System.err.println("Error parsing password file: " + e.getMessage());
-      return new HashMap();
-    } finally {
-      try {
-        reader.close();
-      } catch (IOException e) {
-        System.err.println("Error closing reader: " + e.getMessage());
-      }
-    }
-  }
 
-  public HashMap parse() {
-    try {
-      final FileInputStream passwdFile = new FileInputStream("/etc/passwd");
-      BufferedReader reader = new BufferedReader(new InputStreamReader(passwdFile, "UTF-8"));
-      return parse(reader);
-    } catch (IOException e) {
-      System.err.println("Error reading password file: " + e.getMessage());
-      return new HashMap();
+        HashMap users = new HashMap();
+        try {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(":");
+                if (fields.length >= 2) {
+                    users.put(fields[2], fields[0]);
+                }
+            }
+            return users;
+        } catch (IOException e) {
+            System.err.println("Error parsing password file: " + e.getMessage());
+            return new HashMap();
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                System.err.println("Error closing reader: " + e.getMessage());
+            }
+        }
     }
-  }
+
+    public HashMap parse() {
+        try {
+            final FileInputStream passwdFile = new FileInputStream("/etc/passwd");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(passwdFile, "UTF-8"));
+            return parse(reader);
+        } catch (IOException e) {
+            System.err.println("Error reading password file: " + e.getMessage());
+            return new HashMap();
+        }
+    }
 }

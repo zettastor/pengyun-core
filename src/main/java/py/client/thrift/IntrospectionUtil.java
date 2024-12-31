@@ -1,16 +1,15 @@
-/*
- * Copyright (c) 2022-2022. PengYunNetWork
- *
- * This program is free software: you can use, redistribute, and/or modify it
- * under the terms of the GNU Affero General Public License, version 3 or later ("AGPL"),
- * as published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- *  You should have received a copy of the GNU Affero General Public License along with
- *  this program. If not, see <http://www.gnu.org/licenses/>.
- */
+//
+// ========================================================================
+// Copyright (c) 1995 Mort Bay Consulting Pty Ltd and others.
+//
+// This program and the accompanying materials are made available under the
+// terms of the Eclipse Public License v. 2.0 which is available at
+// https://www.eclipse.org/legal/epl-2.0, or the Apache License, Version 2.0
+// which is available at https://www.apache.org/licenses/LICENSE-2.0.
+//
+// SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+// ========================================================================
+//
 
 package py.client.thrift;
 
